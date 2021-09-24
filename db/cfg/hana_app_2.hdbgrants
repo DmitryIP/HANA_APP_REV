@@ -1,0 +1,10 @@
+{
+  "hdi_db_app_2-service": {
+    "object_owner" : {
+      "container_roles":["role"]
+    },
+    "application_user" : {
+      "container_roles":["role"]
+    }
+  }
+}

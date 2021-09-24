@@ -1,0 +1,23 @@
+{
+  "PO_Header": {
+    "target": {
+      "object": "PurchaseOrder.Header",
+      "schema": "DB_APP_2",
+      "database": "HC1"
+    }
+  },
+  "PO_Item": {
+    "target": {
+      "object": "PurchaseOrder.Item",
+      "schema": "DB_APP_2",
+      "database": "HC1"
+    }
+  },
+  "PO_itemView": {
+    "target": {
+      "object": "PurchaseOrder.ItemView",
+      "schema": "DB_APP_2",
+      "database": "HC1"
+    }
+  }
+}

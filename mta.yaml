@@ -2,3 +2,37 @@ ID: HANA_APP_REV
 _schema-version: '2.1'
 description: HANA_APP REVIEW
 version: 0.0.1
+modules:
+  - name: web
+    type: html5
+    path: web
+    requires:
+      - name: UAA-service
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_db
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: cross-hdi_db_app_2
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: hdi_db_app_2-service
+          service: '~{hdi_db_app_2-service}'
+resources:
+  - name: UAA-service
+    type: com.sap.xs.uaa-space
+  - name: hdi_db
+    parameters:
+      config:
+        schema: db_rev
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: cross-hdi_db_app_2
+    parameters:
+      service-name: hdi_db_app_2
+    properties:
+      hdi_db_app_2-service: '${service-name}'
+    type: org.cloudfoundry.existing-service
