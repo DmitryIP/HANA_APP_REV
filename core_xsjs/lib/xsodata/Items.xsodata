@@ -1,0 +1,3 @@
+service {
+	"PurchaseOrder.Item" as "POItem";
+}
